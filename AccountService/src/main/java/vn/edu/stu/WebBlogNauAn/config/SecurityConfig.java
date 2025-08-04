@@ -44,6 +44,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         .requestMatchers("/api/accounts/auth/**").permitAll()
                         .requestMatchers("/api/accounts/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/accounts/messages/community").permitAll()
                         .anyRequest().authenticated())
                 .exceptionHandling(exceptions -> exceptions.accessDeniedHandler(customAccessDeniedHandler))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

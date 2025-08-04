@@ -39,6 +39,11 @@ public class MainController {
     private final AccountRepo accountRepo;
     private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
+    @GetMapping("/messages/community")
+    public ResponseEntity<MessageResponse> getPinnedMessage() {
+        return ResponseEntity.ok().body(messageService.getPinnedMessage());
+    }
+
     @GetMapping("/{accountId}")
     public ResponseEntity<AccountResponse> getAccountById(@PathVariable long accountId) {
         AccountResponse accountResponse = accountService.findAccountById(accountId);

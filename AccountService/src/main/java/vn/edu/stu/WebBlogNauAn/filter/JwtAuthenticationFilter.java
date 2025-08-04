@@ -39,7 +39,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             "/api/accounts/auth/login",
             "/api/accounts/auth/register",
             "/api/accounts/auth/refresh-access-token",
-            "/api/accounts/auth/verify");
+            "/api/accounts/auth/verify",
+            "/api/accounts/messages/community"
+            );
 
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,
